@@ -15,11 +15,11 @@ namespace FinalEx
     public class Animal
     {
         public string Name { get; private  set; }
-        public AnimalType Type { get; private set; }
+        public string Type { get; private set; }
         public DateOnly Birthday { get; private set; }
         public Dictionary<string,string> Commands { get; private set; }
         
-        public Animal (string name, AnimalType type, DateOnly birthday)
+        public Animal (string name, string type, DateOnly birthday)
         {
             Name = name;
             Type = type;
@@ -42,7 +42,13 @@ namespace FinalEx
             Commands.Add(command, doing);
             return true;
         }
+        public override string ToString()
+        {
+            StringBuilder sb=new StringBuilder();
 
-        
+            return sb.AppendFormat("{0} {1} {2}",new Object[] {Name,Type,Birthday}).ToString();
+        }
+
+
     }
 }

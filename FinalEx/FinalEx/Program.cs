@@ -1,2 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using FinalEx;
+using System.IO.Pipes;
+
+AnimalMenu animalMenu = new AnimalMenu(new ConsoleUI());
+animalMenu.Start();
+Console.ReadLine();
